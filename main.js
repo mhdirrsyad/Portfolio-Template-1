@@ -1,3 +1,4 @@
+// Function Toogle
 function toogleDetail(e) {
     // Variabel Finding Target
     const target = $(e.target)
@@ -15,5 +16,33 @@ function toogleDetail(e) {
     } else {
         // Change HTML from target
         $(target).html("Less Info").addClass("active")
+    }
+}
+
+// Function Form Submit
+function onFormSubmit(e) {
+    e.preventDefault()
+
+    // Variable Finding -> email id, subject id, message id
+    const email = $("#inp_email")
+    const subject = $("#inp_subject")
+    const message = $("#inp_message")
+
+    // console.log($(subject).val())
+
+    // if else for validation
+    if (!$(email).val()) {
+        alert("Email is required")
+    } else if (!$(subject).val()) {
+        alert("Subject is required")
+    } else if (!$(message).val()) {
+        alert("Message is required")
+    } else {
+        // set value input blank
+        alert("Form Submitted")
+        // set value black when form submit
+        $(email).val("")
+        $(subject).val("")
+        $(message).val("")
     }
 }
